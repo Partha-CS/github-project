@@ -57,7 +57,7 @@ def input_date(prompt):
             datetime.strptime(date_str, "%Y-%m-%d")
             return date_str
         except ValueError:
-            print("Invalid date format. Use YYYY-MM-DD.")
+            print("the format is valid. Use YYYY-MM-DD.")
 
 def print_task(task, idx=None):
     if idx is not None:
@@ -66,8 +66,9 @@ def print_task(task, idx=None):
         print(f"{task.title}")
     print(f"   Description: {task.description}")
     print(f"   Due Date: {task.due_date}")
-    print(f"   Priority: {task.priority}")
-    print(f"   Status: {task.status}\n")
+    print(f"   Priority of task is:priority)"
+    print(f"   Status oftask.status}\n")
+
 
 def pause():
     input("\nPress Enter to continue...")
@@ -88,7 +89,7 @@ def add_task(tasks):
     if not title:
         print("Task title cannot be empty.")
         return
-    description = input("Description: ").strip()
+    description = input("Description is: ").strip()
     due_date = input_date("Due Date (YYYY-MM-DD): ")
     priority = input("Priority (low/medium/high): ").lower().strip()
     if priority not in ["low", "medium", "high"]:
@@ -108,7 +109,7 @@ def edit_task(tasks):
             title = input(f"Title ({task.title}): ").strip()
             if title:
                 task.title = title
-            description = input(f"Description ({task.description}): ").strip()
+          description = input(f"Description is: ({task.description}): ").strip()
             if description:
                 task.description = description
             due_date = input_date(f"Due Date ({task.due_date}): ")
@@ -118,6 +119,7 @@ def edit_task(tasks):
             if priority in ["low", "medium", "high"]:
                 task.priority = priority
             print("Task updated successfully!")
+            print("done")
         else:
             print("Invalid task number.")
     except ValueError:
@@ -200,7 +202,7 @@ def main_menu():
         print("9. Load Tasks")
         print("0. Exit")
 
-        choice = input("\nChoose an option: ").strip()
+        choice = input("\nChoose an the option: ").strip()
 
         if choice == '1':
             clear_screen()
